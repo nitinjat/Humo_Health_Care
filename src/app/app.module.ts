@@ -1,42 +1,54 @@
-import { NgModule } from '@angular/core';
+import { NgModule ,CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
-import { AppComponent } from './app.component';
+import { FormsModule } from '@angular/forms';
+import { RouterModule, Routes } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { AppRoutingModule } from './app-routing.module';
+
+
 import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './header/header.component';
 import { BannerComponent } from './banner/banner.component';
 import { FooterComponent } from './footer/footer.component';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { AppRoutingModule } from './app-routing.module';
-import { RouterModule, Routes } from '@angular/router';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { ProductServicesComponent } from './product-services/product-services.component';
+import { AdminModule } from './Admin/admin.module';
+import { HttpClientModule } from '@angular/common/http';
+import { AppComponent } from './app.component';
+
+
+
 @NgModule({
-  declarations: [
+  declarations: [   
     AppComponent,
     HomeComponent,
     HeaderComponent,
     BannerComponent,
+    ProductServicesComponent,  
     FooterComponent,
     AboutUsComponent,
     ContactUsComponent,
     PagenotfoundComponent,
-    ProductServicesComponent
+   
+   
   ],
   imports: [
     BrowserModule,
+    RouterModule,
     BrowserAnimationsModule,
     NgbModule,
-    AppRoutingModule,
-    RouterModule
+    AppRoutingModule,   
+    AdminModule,
+    HttpClientModule,
+    FormsModule       
   ],
-  exports:[HomeComponent,  
-    HeaderComponent,
-    FooterComponent],
-  providers: [BannerComponent],
-  bootstrap: [AppComponent]
+  exports:[ RouterModule,FooterComponent ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
+  providers: [],      
+    bootstrap: [AppComponent,]
 })
 export class AppModule { }

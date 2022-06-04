@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {RouterModule , Route} from '@angular/router';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -7,4 +7,5 @@ import {RouterModule , Route} from '@angular/router';
 })
 export class AppComponent {
   title = 'HumoHealthCare';
+ 
 }
