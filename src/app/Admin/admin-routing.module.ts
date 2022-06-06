@@ -8,11 +8,21 @@ import { AddContentComponent } from './add-content.component';
 import { ContentListComponent } from './content-list.component';
 import { AdminHeaderComponent } from './admin-header/admin-header.component';
 import { AdminFooterComponent } from './admin-footer/admin-footer.component';
+import { ViewProductsComponent} from './view-products/view-products.component';
+import { AddProductsComponent} from './add-products/add-products.component';
+import { ViewQueriesComponent} from './view-queries/view-queries.component';
+import { ViewUsersComponent } from './view-users/view-users.component';
+import { AddUsersComponent  } from './add-users/add-users.component';
 const routes: Routes = [
  { path: 'Admin', component : AdminComponent  },
  { path:'Login' ,component: LoginComponent },      
  { path:'AddContent', component : AddContentComponent  },
  { path:'ContentList' ,component: ContentListComponent }, 
+ { path:'AddProduct', component : AddProductsComponent  },
+ { path:'ProductList' ,component: ViewProductsComponent }, 
+ { path:'ViewQuery', component : ViewQueriesComponent  },
+ { path:'UserList' ,component: ViewUsersComponent }, 
+ { path:'AddUser' ,component: AddUsersComponent }, 
 ];
 
 @NgModule({

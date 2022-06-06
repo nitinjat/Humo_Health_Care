@@ -1,0 +1,51 @@
+<app-admin-header></app-admin-header>
+<div class="w3-main" style="margin-left:300px;margin-top:43px;">
+    <header class="w3-container" style="padding-top:22px">
+        <h5><b><i class="fa fa-dashboard"></i> Add Contents</b></h5>
+    </header>
+    <div class="w3-row-padding w3-margin-bottom">
+        <div class="w3-container">
+            <form [formGroup]="formdata" (ngSubmit)="onClickSubmit(formdata.value)">
+                <div class="p-2 row">
+                    <div class="col-2">
+                        <label for="fname">User Name</label>
+                    </div>
+                    <div class="col-4">
+                        <input type="text" formControlName="Uname" id="Uname" name="Name" placeholder="Your name..">
+                    </div>
+                    <div class="col-2">
+                        <label for="lname">User Password</label>
+                    </div>
+                    <div class="col-4">
+                        <input type="text" formControlName="Password" id="Password" name="Password"
+                            placeholder="Your last name..">
+                    </div>
+                </div>
+                <div class="p-2 row">
+                    <div class="col-2">
+                        <label for="fname">User Email</label>
+                    </div>
+                    <div class="col-4">
+                        <input type="text" formControlName="UEmail" id="UEmail" name="Email" placeholder="Your Email..">
+                    </div>
+                    <div class="col-2">
+                        <label for="lname">User Mobile</label>
+                    </div>
+                    <div class="col-4">
+                        <input type="text" formControlName="Mobile" id="Mobile" name="Mobile"
+                            placeholder="Your Mobile.." maxlength="10">
+                    </div>
+                </div>
+                <div class="p-2 row">
+                    <div class="col-2">
+
+                    </div>
+                    <div class="col-4">
+                        <input type="submit" value="Submit" class="btn btn-primary">
+                    </div>
+
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

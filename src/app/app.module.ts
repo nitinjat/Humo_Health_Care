@@ -1,6 +1,6 @@
 import { NgModule ,CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { FormsModule,ReactiveFormsModule  } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -19,6 +19,9 @@ import { ProductServicesComponent } from './product-services/product-services.co
 import { AdminModule } from './Admin/admin.module';
 import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
+import { AddProductsComponent } from './Admin/add-products/add-products.component';
+import { ViewProductsComponent } from './Admin/view-products/view-products.component';
+import { ViewQueriesComponent } from './Admin/view-queries/view-queries.component';
 
 
 
@@ -33,6 +36,9 @@ import { AppComponent } from './app.component';
     AboutUsComponent,
     ContactUsComponent,
     PagenotfoundComponent,
+    AddProductsComponent,
+    ViewProductsComponent,
+    ViewQueriesComponent,
    
    
   ],
@@ -44,7 +50,7 @@ import { AppComponent } from './app.component';
     AppRoutingModule,   
     AdminModule,
     HttpClientModule,
-    FormsModule       
+    FormsModule ,ReactiveFormsModule       
   ],
   exports:[ RouterModule,FooterComponent ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
