@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-
-
+import { CommonModule } from '@angular/common';
 import { AdminComponent } from './admin.component';
 import { LoginComponent } from './login.component';
 import { AddContentComponent } from './add-content.component';
@@ -14,16 +13,19 @@ import { ViewQueriesComponent} from './view-queries/view-queries.component';
 import { ViewUsersComponent } from './view-users/view-users.component';
 import { AddUsersComponent  } from './add-users/add-users.component';
 const routes: Routes = [
- { path: 'Admin', component : AdminComponent  },
- { path:'Login' ,component: LoginComponent },      
- { path:'AddContent', component : AddContentComponent  },
- { path:'ContentList' ,component: ContentListComponent }, 
- { path:'AddProduct', component : AddProductsComponent  },
- { path:'ProductList' ,component: ViewProductsComponent }, 
- { path:'ViewQuery', component : ViewQueriesComponent  },
- { path:'UserList' ,component: ViewUsersComponent }, 
- { path:'AddUser' ,component: AddUsersComponent }, 
-];
+  { path: 'Admin',  children :[
+  { path :'',component : AdminComponent  },
+  { path:'Login' ,component: LoginComponent },      
+  { path:'AddContent', component : AddContentComponent  },
+  { path:'ContentList' ,component: ContentListComponent }, 
+  { path:'AddProduct', component : AddProductsComponent  },
+  { path:'ProductList' ,component: ViewProductsComponent }, 
+  { path:'ViewQuery', component : ViewQueriesComponent  },
+  { path:'UserList' ,component: ViewUsersComponent }, 
+  { path:'AddUser' ,component: AddUsersComponent }, 
+ ]
+}];
+ 
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],

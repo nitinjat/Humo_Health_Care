@@ -5,19 +5,19 @@
     </header>
     <div class="w3-row-padding w3-margin-bottom">
         <div class="w3-container">
-            <form>
+            <form [formGroup]="formdata" (ngSubmit)="OnSubmit(formdata.value)">
                 <div class="p-2 row">
                     <div class="col-2">
                         <label for="Title">Product Title</label>
                     </div>
                     <div class="col-4">
-                        <input type="text" id="Title" name="Name" placeholder="Your name..">
+                        <input type="text" formControlName="Title" name="Title" placeholder="Your name..">
                     </div>
                     <div class="col-2">
                         <label for="lname">Product Sub Title</label>
                     </div>
                     <div class="col-4">
-                        <input type="text" id="Subtitle" name="Subtitle" placeholder="Your last name..">
+                        <input type="text" formControlName="Subtitle" name="Subtitle" placeholder="Your last name..">
                     </div>
                 </div>
                 <div class="p-2 row">
@@ -25,14 +25,15 @@
                         <label for="fname">Product Price</label>
                     </div>
                     <div class="col-4">
-                        <input type="text" id="Price" name="Name" placeholder="Product Price"
+                        <input type="text" formControlName="Price" name="Price" placeholder="Product Price"
                             (keypress)="keyPressNumbersWithDecimal($event)">
                     </div>
                     <div class="col-2">
                         <label for="lname">Product Descriptions</label>
                     </div>
                     <div class="col-4">
-                        <input type="text" id="Descriptions" name="Descriptions" placeholder="Product Descriptions..">
+                        <input type="text" formControlName="Descriptions" name="Descriptions"
+                            placeholder="Product Descriptions..">
                     </div>
                 </div>
                 <div class="p-2 row">
@@ -41,15 +42,27 @@
                     </div>
                     <div class="col-4">
                         <input type="file" accept="image/*" multiple (change)="selectFiles($event)" />
+                        <span> Maximum 4 images allowed</span>
                         <button class="btn btn-success" [disabled]="!selectedFiles" (click)="uploadFiles()"> Upload
                         </button>
                     </div>
                 </div>
                 <div class="p-2 row">
-                    <div class="col-2">                      
+                    <div class="col-2">
                     </div>
                     <div class="col-4">
                         <button class="btn btn-primary"> Submit </button>
+                    </div>
+                </div>
+
+                <div class="p-2 row">
+                    <div class="col-md-3 col-sm-6" *ngFor="let imgs of previews let i=index">
+                        <div class="product-grid2">
+                            <div class="product-image+{{i+1}}" >                               
+                                    <img class="pic-1" src="{{imgs}}" >                             
+
+                            </div>
+                        </div>
                     </div>
                 </div>
             </form>

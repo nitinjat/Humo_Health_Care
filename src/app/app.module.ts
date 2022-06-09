@@ -2,6 +2,7 @@ import { NgModule ,CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule,ReactiveFormsModule  } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
+import { CommonModule } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -22,11 +23,13 @@ import { AppComponent } from './app.component';
 import { AddProductsComponent } from './Admin/add-products/add-products.component';
 import { ViewProductsComponent } from './Admin/view-products/view-products.component';
 import { ViewQueriesComponent } from './Admin/view-queries/view-queries.component';
+import { AdminsevicesService} from './Admin/adminsevices.service';
 
 
 
 @NgModule({
   declarations: [   
+
     AppComponent,
     HomeComponent,
     HeaderComponent,
@@ -43,6 +46,7 @@ import { ViewQueriesComponent } from './Admin/view-queries/view-queries.componen
    
   ],
   imports: [
+    CommonModule,
     BrowserModule,
     RouterModule,
     BrowserAnimationsModule,
@@ -52,9 +56,9 @@ import { ViewQueriesComponent } from './Admin/view-queries/view-queries.componen
     HttpClientModule,
     FormsModule ,ReactiveFormsModule       
   ],
-  exports:[ RouterModule,FooterComponent ],
+  exports:[ RouterModule,FooterComponent, ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
-  providers: [],      
-    bootstrap: [AppComponent,]
+  providers: [AdminsevicesService],      
+  bootstrap: [AppComponent,]
 })
 export class AppModule { }

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { AdminsevicesService} from './../adminsevices.service';
 @Component({
   selector: 'app-view-queries',
   templateUrl: './view-queries.component.html',
@@ -7,9 +7,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ViewQueriesComponent implements OnInit {
 
-  constructor() { }
+ public querylist : object  = [];
+  constructor(private services :AdminsevicesService) { }
 
   ngOnInit(): void {
+     this.Getquery();
   }
 
+  Getquery() :void
+  {
+    debugger;
+    this.services.getQuery().subscribe(
+      value => { 
+        
+          this.querylist = value.User;
+         
+      }
+     
+    );
+  }
 }

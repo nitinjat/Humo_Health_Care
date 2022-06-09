@@ -21,16 +21,17 @@ export class AddUsersComponent implements OnInit {
 
   }
   onClickSubmit(data: any) {
-    debugger;
+    
     if (this.formdata.invalid) {
       this.services.AddUser(data).subscribe(
-     
-      error => {
-       
-        
-      })   ;    
+        value => { 
+          if(value.Success === true)
+          {
+            alert('User Detail saved.');
+          }
+        })    
               
     }
-    alert("Entered Email id : " + data);
+
   }
 }

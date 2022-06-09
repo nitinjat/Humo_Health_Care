@@ -30,5 +30,8 @@
     "strictInputAccessModifiers": true,
     "strictTemplates": false,
     "noImplicitAny": false,"strict" :false
-  }
+  },
+  "eslint.workingDirectories": [
+    "sub-directory-where-tsconfig-files-are"
+  ]
 }

@@ -3,13 +3,13 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { retry, catchError } from 'rxjs/operators';
 import { AppComponent } from './../app.component';
-import { CommonCls, ApisUrls } from './../Utilities/CommonCls';
+import {ApisUrls } from './../Utilities/CommonCls'
 @Injectable({
   providedIn: 'root'
 })
 export class AdminsevicesService {
   commonRequestObj: any = {};
-  constructor(private http: HttpClient, private CommonObj: CommonCls) { }
+  constructor(private http: HttpClient, ) { }
 
   error: any;
   httpOptions = {
@@ -17,6 +17,7 @@ export class AdminsevicesService {
       'Content-Type': 'application/json',
     }),
   };
+   
   // POST
   // CreateBug(data): Observable<CommonCls> {
   //   return this.http
@@ -68,8 +69,46 @@ export class AdminsevicesService {
     return value;
   }
   AddUser(commonRequestObj: any): Observable<any> {
-    return this.http.post(this.CommonObj.apiUrls.PostUser, commonRequestObj, this.httpOptions);
+    return this.http.post(ApisUrls.PostUser, commonRequestObj, this.httpOptions);
   }
+  PostProducts(commonRequestObj: any): Observable<any> {
+    return this.http.post(ApisUrls.PostProducts, commonRequestObj, this.httpOptions);
+  }
+  getProductList() :Observable<any> {
+    return this.http.get<any>(ApisUrls.GetQuery);
+  }
+
+  PostContents(commonRequestObj: any): Observable<any> {
+    return this.http.post(ApisUrls.PostProducts, commonRequestObj, this.httpOptions);
+  }
+  getContentList() :Observable<any> {
+    return this.http.get<any>(ApisUrls.GetQuery);
+  }
+  getUserById(Id:number) :Observable<any> {
+    return this.http.get(ApisUrls.GetUser + Id );
+  }
+  getUser() :Observable<any> {
+    return this.http.get(ApisUrls.GetAllUser);
+  }
+
+  AddQuery(commonRequestObj: any): Observable<any> {
+    return this.http.post(ApisUrls.PostQuery, commonRequestObj, this.httpOptions);
+  }
+
+  getQuery() :Observable<any> {
+    return this.http.get<any>(ApisUrls.GetQuery);
+  }
+  // Registration(User:any):Observable<any>
+  // {
+  //   return this.httpclient.post<any>(AppComponent.apiUrl+"MangalDal/MDRegistration",User,{
+  //     headers:new HttpHeaders({
+  //       'Content-type':'application/json',
+  //       'accept':'text/json'
+  //     }
+  //     ),observe:"body"
+    
+  //   })
+ // }
 }
 
 

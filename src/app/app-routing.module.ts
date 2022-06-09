@@ -9,8 +9,10 @@ import { AboutUsComponent } from './about-us/about-us.component';
 import { ContactUsComponent} from './contact-us/contact-us.component'
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { ProductServicesComponent} from './product-services/product-services.component';
-import {AdminRoutingModule } from './Admin/admin-routing.module';
+import { AdminRoutingModule } from './Admin/admin-routing.module';
 import { AdminModule } from './Admin/admin.module';
+import { AdminsevicesService} from './Admin/adminsevices.service';
+
 const appRoutes: Routes = [
   {
     path: '',
@@ -39,7 +41,7 @@ const appRoutes: Routes = [
   ],
 
   providers: [
-    BannerComponent
+    BannerComponent,AdminsevicesService
   ]
 })
 export class AppRoutingModule { }

@@ -1,1 +1,35 @@
 <app-admin-header></app-admin-header>
+<div class="w3-main" style="margin-left:300px;margin-top:43px;">
+    <header class="w3-container" style="padding-top:22px">
+        <h5><b><i class="fa fa-dashboard"></i> User Queries</b></h5>
+    </header>
+    <div class="w3-row-padding w3-margin-bottom">
+        <div class="w3-container">      
+            <table class="w3-table w3-striped w3-bordered w3-border w3-hoverable w3-white">
+                <thead>
+                    <tr>
+                        <th>Nos.</th>
+                        <th>
+                            User Name
+                        </th>
+                        <th>
+                            User Email
+                        </th>
+                        <th>
+                            User Query
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let qry of querylist let i=index">
+                        <td class="text-center">{{i+1}}</td>
+                        <td>{{qry.UserName}}</td>
+                        <td>{{qry.UserEmail}}</td>
+                        <td>{{qry.UserQuery}}</td>
+                    </tr>
+                </tbody>
+            </table><br>
+         </div>
+        <hr>
+    </div>
+</div>
